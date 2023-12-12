@@ -44,7 +44,7 @@ pipeline {
                         case "development":
                             sh '''
                             echo 'redis host is ipaddres and user = default and password from env and port 6379'
-                            echo 'mongo host is ipaddres and userand password you will getfrom env port 27017 '
+                            echo 'mongo host is ipaddres and userand password you will get from env port 27017 '
                             '''
                             break
                         

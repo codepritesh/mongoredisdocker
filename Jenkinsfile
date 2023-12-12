@@ -12,6 +12,10 @@ pipeline {
                         case "development":
                             sh '''
                                 docker compose -f mongo_and_redis_dockercomposer_development.yml up -d
+                                docker rm -f mongo-qzkraft-ctr
+                                docker rmi mongo:7.0
+                                docker rm -f redis-qzkraft-ctr
+                                docker rmi redis:7-alpine
                                 '''
                             break
                         

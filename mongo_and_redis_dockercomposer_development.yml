@@ -13,8 +13,8 @@ services:
     networks:
       - qzkraft-net
     environment:
-      MONGO_INITDB_ROOT_USERNAME: dkraft 
-      MONGO_INITDB_ROOT_PASSWORD: Dkraft246
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME} 
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD} 
     volumes:
       - mongodb-data:/data/db
     deploy:
@@ -24,7 +24,7 @@ services:
           memory: 1g
   redis:
     image: "redis:7-alpine"
-    command: redis-server --requirepass 66b3434a5af8499991fa4cd7670d5238
+    command: redis-server --requirepass ${REDIS_kEY}
     container_name: redis-qzkraft-net
     ports:
      - "6379:6379"

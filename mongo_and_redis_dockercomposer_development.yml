@@ -9,7 +9,7 @@ services:
     container_name: mongo-qzkraft-ctr
     restart: always    
     ports:
-      - 27017:27017
+      - 8037:27017
     networks:
       - qzkraft-net
     environment:
@@ -20,14 +20,14 @@ services:
     deploy:
       resources:
         limits:
-          cpus: '1.0'
-          memory: 1g
+          cpus: '2.0'
+          memory: 2g
   redis:
     image: "redis:7-alpine"
     command: redis-server --requirepass ${REDIS_kEY}
     container_name: redis-qzkraft-ctr
     ports:
-     - "6379:6379"
+     - "8039:6379"
     environment:
      - REDIS_REPLICATION_MODE=master
     networks:
@@ -35,7 +35,7 @@ services:
     deploy:
       resources:
         limits:
-          cpus: '1.0'
-          memory: 1g
+          cpus: '2.0'
+          memory: 2g
 volumes:
   mongodb-data:

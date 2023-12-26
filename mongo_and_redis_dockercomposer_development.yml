@@ -32,10 +32,5 @@ services:
      - REDIS_REPLICATION_MODE=master
     networks:
      - qzkraft-net
-    deploy:
-      resources:
-        limits:
-          cpus: '2.0'
-          memory: 2g
 volumes:
   mongodb-data:
